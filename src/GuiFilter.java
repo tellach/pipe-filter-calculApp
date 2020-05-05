@@ -1,9 +1,21 @@
 import java.util.Scanner;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import sun.plugin.dom.html.HTMLBodyElement;
+
 public  class GuiFilter extends Filter {
 
     Pipe _dataINPipe;
     Pipe _dataOUTPipe;
+    @FXML
+    private TextField number1;
+    @FXML
+    private TextField number2;
+    @FXML
+    private Label result;
 
     public GuiFilter(Pipe _dataINPipe, Pipe _dataOUTPipe) {
 		super();
@@ -26,7 +38,7 @@ public  class GuiFilter extends Filter {
 	@Override
 	synchronized void execute() {
 		// TODO Auto-generated method stub
-
+        /*
         while(true) {
             affichageMenu();
             Scanner sc = new Scanner(System.in);
@@ -79,16 +91,30 @@ public  class GuiFilter extends Filter {
             }
             System.out.println("Resultat: " + getData());
         }
+
+         */
 	}
 
-	public void affichageMenu(){
-        System.out.println("===============");
-        System.out.println("0:Quittez ");
-        System.out.println("1:Somme ");
-        System.out.println("2:Produit ");
-        System.out.println("3:Factorielle ");
-        System.out.println("4:Trace ");
-        System.out.println("===============");
+    @FXML
+    private void handleSum(ActionEvent event) {
+        int x = Integer.parseInt(number1.getText());
+        int y = Integer.parseInt(number2.getText());
+        System.out.println("print");
+        Operation operationS = new Operation(x, "Somme", y);
+        sendData(operationS);
+        result.setText(getData().toString());
     }
+
+
+
+//	public void affichageMenu(){
+//        System.out.println("===============");
+//        System.out.println("0:Quittez ");
+//        System.out.println("1:Somme ");
+//        System.out.println("2:Produit ");
+//        System.out.println("3:Factorielle ");
+//        System.out.println("4:Trace ");
+//        System.out.println("===============");
+//    }
 }
  
