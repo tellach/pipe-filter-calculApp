@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="174.0" layoutY="14.0" style="&#10;" text="LES FORMES ET LES VUES" textAlignment="CENTER" wrapText="false">
+          <font>
+            <Font name="Arial Bold" size="22.0" />
+          </font>
+        </Label>
+            <Label layoutX="66.0" layoutY="82.0" text="Nombre 1">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="347.0" layoutY="82.0" text="Nombre 2">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="number1" layoutX="154.0" layoutY="80.0" />
+            <TextField fx:id="number2" layoutX="437.0" layoutY="80.0" />
+            <Separator layoutX="27.0" layoutY="55.0" prefHeight="6.0" prefWidth="587.0" />
+            <Separator layoutX="27.0" layoutY="124.0" prefHeight="6.0" prefWidth="587.0" />
+            <Button fx:id="fact" layoutX="419.0" layoutY="145.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" text="FACTORIEL">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="product" layoutX="234.0" layoutY="145.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" text="PRODUIT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="sum" layoutX="47.0" layoutY="145.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" text="SOMME">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Separator layoutX="27.0" layoutY="188.0" prefHeight="6.0" prefWidth="587.0" />
+            <Label alignment="CENTER" layoutX="256.0" layoutY="206.0" style="&#10;" text="RESULTATS" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <Separator layoutX="150.0" layoutY="289.0" prefHeight="6.0" prefWidth="340.0" />
+            <Button fx:id="quit" layoutX="140.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" text="QUITTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="trace" layoutX="326.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" text="TRACE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
