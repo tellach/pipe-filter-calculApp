@@ -1,9 +1,11 @@
+import java.awt.print.Book;
 import java.util.Scanner;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.collections.ObservableList;
 import sun.plugin.dom.html.HTMLBodyElement;
 
 public  class GuiFilter extends Filter {
@@ -16,6 +18,13 @@ public  class GuiFilter extends Filter {
     private TextField number2;
     @FXML
     private Label result;
+    @FXML
+    private ListView listView;
+
+
+
+
+
 
     public GuiFilter(Pipe _dataINPipe, Pipe _dataOUTPipe) {
 		super();
@@ -97,12 +106,58 @@ public  class GuiFilter extends Filter {
 
     @FXML
     private void handleSum(ActionEvent event) {
+        ObservableList<String> results=FXCollections.observableArrayList();
         int x = Integer.parseInt(number1.getText());
         int y = Integer.parseInt(number2.getText());
-        System.out.println("print");
         Operation operationS = new Operation(x, "Somme", y);
         sendData(operationS);
-        result.setText(getData().toString());
+        results.addAll(getData().toString());
+        listView.setItems(results);
+        listView.setVisible(true);
+        //result.setText(getData().toString());
+    }
+    @FXML
+    private void handleProduct(ActionEvent event) {
+        ObservableList<String> results=FXCollections.observableArrayList();
+        int x = Integer.parseInt(number1.getText());
+        int y = Integer.parseInt(number2.getText());
+        Operation operationS = new Operation(x, "Produit", y);
+        sendData(operationS);
+        results.addAll(getData().toString());
+        listView.setItems(results);
+        listView.setVisible(true);
+        //result.setText(getData().toString());
+    }
+    @FXML
+    private void handleFact(ActionEvent event) {
+        ObservableList<String> results=FXCollections.observableArrayList();
+        int x = Integer.parseInt(number1.getText());
+        Operation operationS = new Operation(x, "Factorielle", 0);
+        sendData(operationS);
+        results.addAll(getData().toString());
+        listView.setItems(results);
+        listView.setVisible(true);
+        //result.setText(getData().toString());
+    }
+
+    @FXML
+    private void quit(ActionEvent event) {
+        System.exit(0);
+
+    }
+
+    @FXML
+    private void trace(ActionEvent event) {
+
+        ObservableList<String> trace=FXCollections.observableArrayList();
+        int x = Integer.parseInt(number1.getText());
+        Operation operationT = new Operation(x,"Trace",0);
+        sendData(operationT);
+        String[] list = (getData().toString()).split("/n");
+        trace.addAll(list);
+        listView.setItems(trace);
+        listView.setVisible(true);
+
     }
 
 

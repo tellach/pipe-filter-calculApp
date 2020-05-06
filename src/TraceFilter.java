@@ -38,7 +38,7 @@ public  class TraceFilter extends Filter {
         while (true) {
 		    Operation operation = getData();
 		    if(operation.name.equals("Trace")) {
-                lireop(operation.operandGauche, FILE_NAME);
+                operation.setResultatS(lireop(operation.operandGauche, FILE_NAME));
             }else{
                 saveop(operation, FILE_NAME);
             }
@@ -73,24 +73,32 @@ public  class TraceFilter extends Filter {
         }
     }
 
-    public void lireop(int nb, String fileName){
+    public String lireop(int nb, String fileName){
 	    //nb : c'est le nombre d'operations
+        String resultat = "";
+
         try{
             File file = new File(fileName);
             Scanner lecteur = new Scanner(file);
             int compteur = 0;
             System.out.println("****Tracker.txt****");
+            resultat += "Tracker.txt     \n";
             while(lecteur.hasNextLine() && compteur<nb){
                 //sendData(lecteur.nextLine());
-                System.out.println(lecteur.nextLine());
+                //System.out.println(lecteur.nextLine());
+                resultat += lecteur.nextLine();
+                resultat += "\n";
                 compteur++;
             }
             System.out.println("*******************");
             lecteur.close();
+            return resultat ;
 
         } catch (IOException ioException) {
             System.out.println("An error occurred.");
             ioException.printStackTrace();
+            return resultat ;
+
         }
     }
 
