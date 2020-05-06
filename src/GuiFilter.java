@@ -150,8 +150,7 @@ public  class GuiFilter extends Filter {
     private void trace(ActionEvent event) {
 
         ObservableList<String> trace=FXCollections.observableArrayList();
-        int x = Integer.parseInt(number1.getText());
-        Operation operationT = new Operation(x,"Trace",0);
+        Operation operationT = new Operation(0,"Trace",0);
         sendData(operationT);
         String[] list = (getData().toString()).split("/n");
         trace.addAll(list);

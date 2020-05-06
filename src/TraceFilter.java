@@ -83,12 +83,11 @@ public  class TraceFilter extends Filter {
             int compteur = 0;
             System.out.println("****Tracker.txt****");
             resultat += "Tracker.txt     \n";
-            while(lecteur.hasNextLine() && compteur<nb){
+            while(lecteur.hasNextLine()){
                 //sendData(lecteur.nextLine());
                 //System.out.println(lecteur.nextLine());
                 resultat += lecteur.nextLine();
                 resultat += "\n";
-                compteur++;
             }
             System.out.println("*******************");
             lecteur.close();
