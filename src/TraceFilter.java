@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class TraceFilter extends Filter {
 
-    final static String FILE_NAME = "Tracker.txt";
+    final static String FILE_NAME = "TraceFile.txt";
 
     Pipe _dataINPipe;
     Pipe _dataOUTPipe;
@@ -80,7 +80,7 @@ public class TraceFilter extends Filter {
             File file = new File(fileName);
             Scanner lecteur = new Scanner(file);
             int compteur = 0;
-            resultat += "Tracker.txt     \n";
+            resultat += "TraceFile.txt     \n";
             while (lecteur.hasNextLine()) {
                 //sendData(lecteur.nextLine());
                 //System.out.println(lecteur.nextLine());

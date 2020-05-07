@@ -7,14 +7,19 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.URL;
 
 public class Snippet extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader();
+        /*FXMLLoader loader = new FXMLLoader();
         String fxmlDocPath = "./src/view.fxml";
-        FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
+        FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);*/
+
+        URL fxmlURL = getClass().getResource("view.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlURL);
+
 
 
         Pipe pipeGuiToCalcule = new BlockingQueue();
@@ -35,7 +40,7 @@ public class Snippet extends Application {
         calculeThread.start();
         traceThread.start();
 
-        VBox root = (VBox) loader.load(fxmlStream);
+        VBox root = (VBox) loader.load();
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
