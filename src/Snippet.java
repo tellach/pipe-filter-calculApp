@@ -13,7 +13,7 @@ public class Snippet extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        String fxmlDocPath = "view.fxml";
+        String fxmlDocPath = "./src/view.fxml";
         FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
 
 
