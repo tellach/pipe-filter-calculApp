@@ -2,36 +2,36 @@
 public class Operation {
 
     String name;
-    int  operandGauche;
-    int  operandDroit;
-    long resultat;
-    String resultatS;
+    int og;
+    int od;
+    long result;
+    String results;
 
     public Operation(int opG, String op, int opD) {
-        this.operandGauche = opG;
+        this.og = opG;
         this.name = op;
-        this.operandDroit = opD;
+        this.od = opD;
     }
 
-    public void setResultat(long resultat) {
-        this.resultat = resultat;
+    public void setResultat(long result) {
+        this.result = result;
     }
-    public void setResultatS(String resultat) {
-        this.resultatS = resultat;
+
+    public void setResultatS(String result) {
+        this.results = result;
     }
 
     @Override
     public String toString() {
-        if (this.name.equals("Factorielle"))
-            return operandGauche+"!="+resultat;
+        if (this.name.equals("Factoriel"))
+            return og + "!=" + result;
         else if (this.name.equals("Somme"))
-            return operandGauche+"+"+operandDroit+"="+resultat;
+            return og + "+" + od + "=" + result;
         else if (this.name.equals("Produit"))
-            return operandGauche+"x"+operandDroit+"="+resultat;
-        else if (this.name.equals("Trace")){
-            return resultatS;
-        }
-        else
+            return og + "x" + od + "=" + result;
+        else if (this.name.equals("Trace")) {
+            return results;
+        } else
             return "Fin Affichage";
     }
 }

@@ -30,14 +30,14 @@ public  class CalculeFilter extends Filter {
 			Operation operation = getData();
 			switch (operation.name){
 				case "Somme":
-					operation.setResultat(Add(operation.operandGauche,operation.operandDroit));
+					operation.setResultat(Add(operation.og,operation.od));
 					break;
 
 				case "Produit":
-					operation.setResultat(Multiply(operation.operandGauche,operation.operandDroit));
+					operation.setResultat(Multiply(operation.og,operation.od));
 					break;
-				case "Factorielle":
-					operation.setResultat(Fact(operation.operandGauche));
+				case "Factoriel":
+					operation.setResultat(Fact(operation.og));
 					break;
 			}
 			sendData(operation);
